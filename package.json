@@ -1,0 +1,47 @@
+{
+  "name": "react-navigation-sample",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "flux-standard-action": "^2.0.3",
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-navigation": "^2.7.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.4.6",
+    "@types/react-native": "^0.56.3",
+    "@types/react-redux": "^6.0.4",
+    "babel-jest": "23.4.0",
+    "babel-preset-react-native": "^5",
+    "jest": "23.4.1",
+    "react-native-typescript-transformer": "^1.2.10",
+    "react-test-renderer": "^16.4.1",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/"
+    ],
+    "cacheDirectory": ".jest/cache"
+  }
+}

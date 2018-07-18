@@ -1,0 +1,6 @@
+export const SCREEN_LOGIN = "SCREEN_LOGIN";
+export const SCREEN_SEARCH = "SCREEN_SEARCH";
+export const SCREEN_HOME = "SCREEN_HOME";
+export const SCREEN_SETTINGS = "SCREEN_SETTINGS";
+export const SCREEN_MODAL = "SCREEN_MODAL";
+export const SCREEN_MAIN = "SCREEN_MAIN";
