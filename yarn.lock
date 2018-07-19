@@ -490,11 +490,18 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@types/react-native@^0.56.3":
+"@types/react-native@*", "@types/react-native@^0.56.3":
   version "0.56.3"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.56.3.tgz#79ab5d48f23e7429995a7b539de2b12321c3710f"
   dependencies:
     "@types/react" "*"
+
+"@types/react-navigation@^2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@types/react-navigation/-/react-navigation-2.0.11.tgz#04988b56bc1411854da14d165aba02980df142df"
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
 
 "@types/react-redux@^6.0.4":
   version "6.0.4"
@@ -4433,6 +4440,10 @@ realpath-native@^1.0.0:
   resolved "https://registry.yarnpkg.com/realpath-native/-/realpath-native-1.0.1.tgz#07f40a0cce8f8261e2e8b7ebebf5c95965d7b633"
   dependencies:
     util.promisify "^1.0.0"
+
+redux-persist@^5.10.0:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/redux-persist/-/redux-persist-5.10.0.tgz#5d8d802c5571e55924efc1c3a9b23575283be62b"
 
 redux-thunk@^2.3.0:
   version "2.3.0"
