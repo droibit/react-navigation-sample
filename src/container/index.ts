@@ -1,27 +1,44 @@
 import {
   createStackNavigator,
   createBottomTabNavigator,
+  createSwitchNavigator,
 } from "react-navigation"; 
 import LoginScreen from "./login"
 import HomeTabScreen from "./homeTab";
 import SearchTabScreen from "./searchTab";
 
-export const SCREEN_LOGIN = "SCREEN_LOGIN";
-export const SCREEN_SEARCH = "SCREEN_SEARCH";
-export const SCREEN_HOME = "SCREEN_HOME";
-export const SCREEN_SETTINGS = "SCREEN_SETTINGS";
-export const SCREEN_MODAL = "SCREEN_MODAL";
-export const SCREEN_MAIN = "SCREEN_MAIN";
+export const SCREEN_AUTH = "Auth";
+export const SCREEN_LOGIN = "Login";
+export const SCREEN_APP = "App";
+export const SCREEN_MAIN = "Main";
+export const SCREEN_SEARCH = "Home";
+export const SCREEN_HOME = "Search";
 
-const mainScreen = createBottomTabNavigator({
-  Home: HomeTabScreen,
-  Search: SearchTabScreen,
-});
+const AuthStack = createStackNavigator({
+  Login: LoginScreen
+})
 
-export const AppNavigator = createStackNavigator({
-  Login: LoginScreen,
-  Main: mainScreen,
+const MainTab = createBottomTabNavigator({
+  Home: createStackNavigator({
+    Home: HomeTabScreen,
+  }),
+  Search: createStackNavigator({
+    Search: SearchTabScreen,
+  }),
 }, {
-    initialRouteName: "Login",
+  tabBarOptions: {
+    activeTintColor: 'tomato',
+    inactiveTintColor: 'gray',
+  },
+});
+// const AppStack = createStackNavigator({
+//   Main: MainTab,
+// });
+
+export const AppNavigator = createSwitchNavigator({
+  Auth: AuthStack,
+  App: MainTab,
+}, {
+    initialRouteName: SCREEN_AUTH,
   }
 );
