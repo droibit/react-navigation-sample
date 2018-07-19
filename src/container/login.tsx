@@ -14,13 +14,22 @@ import { Action, Dispatch } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { connect } from 'react-redux';
 import * as Actions from "../module/actions";
+import { 
+  NavigationStackScreenOptions,
+  NavigationScreenProp,
+ } from "react-navigation";
+import { SCREEN_HOME, SCREEN_APP } from ".";
 
 type Props = {
-  screen: string,
-  nextScreen(): void,
+  navigation: NavigationScreenProp<any>,
 };
 
 class LoginScreen extends Component<Props> {
+
+  static navigationOptions: NavigationStackScreenOptions = {
+    title: "Login",
+    // headerTitle: "Hoge"
+  };
 
   constructor(props: Props) {
     super(props);
@@ -31,10 +40,9 @@ class LoginScreen extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>LOGIN!!!</Text>
-        <Button
-          title="Continue"
-          onPress={e => this.props.nextScreen()}
-        />
+        <Button 
+          title="Login"
+          onPress={() => this.props.navigation.navigate(SCREEN_APP)} />
       </View>
     );
   }
