@@ -13,39 +13,30 @@ type Props = {
 class HomeTabScreen extends Component<Props> {
   static navigationOptions: NavigationScreenOptions = {
     title: "HOME",
-    tabBarIcon: ({ tintColor, focused }) => {
-      console.log("HomeTabScreen.tabBarIcon");
-      return (
-        <Image
-          style={{ width: 32, height: 32, tintColor: tintColor! }}
-          source={require("../img/search.png")}
-        />
-      );
-    }
-    // headerTitle: "Hoge",
-  };
+  // headerTitle: "Hoge",
+};
 
-  constructor(props: Props) {
-    super(props);
-    console.log(`HomeTabScreen: ${JSON.stringify(props)}`);
-  }
+constructor(props: Props) {
+  super(props);
+  console.log(`HomeTabScreen: ${JSON.stringify(props)}`);
+}
 
   public render() {
-    const { counter } = this.props;
+  const { counter } = this.props;
 
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>HOME!!!!</Text>
-        <Image
-          style={{ width: 32, height: 32 }}
-          source={require("../img/home.png")}
-        />
-        <Text style={styles.welcome}>{counter}</Text>
-        <Button title="Increment" onPress={e => this.props.increment()} />
-        <Button title="Decrement" onPress={e => this.props.decrement()} />
-      </View>
-    );
-  }
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcome}>HOME!!!!</Text>
+      <Image
+        style={{ width: 32, height: 32 }}
+        source={require("../img/home.png")}
+      />
+      <Text style={styles.welcome}>{counter}</Text>
+      <Button title="Increment" onPress={e => this.props.increment()} />
+      <Button title="Decrement" onPress={e => this.props.decrement()} />
+    </View>
+  );
+}
 }
 
 const styles = StyleSheet.create({

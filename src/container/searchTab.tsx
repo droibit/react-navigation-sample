@@ -1,19 +1,28 @@
 import React, { Component } from "react";
-import { Text, Button, View, Image, StyleSheet } from "react-native";
+import {
+  Text,
+  Button,
+  View,
+  StyleSheet,
+} from "react-native";
 import { connect } from "react-redux";
-import { NavigationTabScreenOptions } from "react-navigation";
+import {
+  NavigationScreenOptions,
+  NavigationScreenConfig,
+} from "react-navigation";
+import { SCREEN_SETTINGS } from ".";
 
 type Props = {};
 class SearchTabScreen extends Component<Props> {
-  static navigationOptions: NavigationTabScreenOptions = {
+  static navigationOptions: NavigationScreenConfig<NavigationScreenOptions> = ({ navigation }) => ({
     title: "Search",
-    tabBarIcon: ({tintColor, focused}) => (
-      <Image
-        style={{ width: 32, height: 32, tintColor: tintColor! }}
-        source={require("../img/search.png")}
+    headerRight: (
+      <Button
+        title="Settings"
+        onPress={() => navigation.push(SCREEN_SETTINGS)}
       />
     ),
-  };
+  });
 
   constructor(props: Props) {
     super(props);
